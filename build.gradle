@@ -1,0 +1,29 @@
+plugins {
+    id 'groovy'
+    id 'application'
+    id 'com.github.ben-manes.versions' version '0.51.0'
+    // uncomment next line when using JDK11+
+    //id 'com.autonomousapps.dependency-analysis' version '1.13.1'
+}
+
+ext.groovyVersion = '4.0.22'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation "org.apache.groovy:groovy:$groovyVersion"
+    implementation "org.apache.groovy:groovy-sql:$groovyVersion"
+    implementation 'org.apache.commons:commons-math3:3.6.1'
+    implementation 'com.oracle.database.jdbc:ojdbc11:23.4.0.24.05'
+    runtimeOnly 'org.slf4j:slf4j-simple:2.0.13'
+}
+
+group = 'org.apache.groovy'
+version = '1.0.0-SNAPSHOT'
+description = 'Groovy Oracle23ai Vector Examples'
+
+application {
+    mainClass = 'OracleIris'
+}
